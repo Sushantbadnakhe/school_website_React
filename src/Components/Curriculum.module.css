@@ -1,0 +1,17 @@
+.heading {
+  text-align: center;
+  padding: 5rem 0;
+}
+
+.heading h1 {
+  color: #0b5ed7;
+  font-weight: 700;
+}
+
+.heading h1 span {
+  color: orange;
+}
+
+.container {
+  margin: 3rem 0;
+}

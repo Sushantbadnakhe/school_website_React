@@ -1,0 +1,12 @@
+.heading {
+  font-family: "Dancing Script", cursive;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 50px;
+  color: orange;
+}
+
+button span {
+  font-size: 20px;
+}

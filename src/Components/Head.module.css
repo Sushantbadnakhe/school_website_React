@@ -1,0 +1,25 @@
+.heading {
+  height: 300px;
+  background-image: linear-gradient(45deg, #f6d365 0%, #fda085 100%);
+  font-family: "Dancing Script", cursive;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  text-align: center;
+  align-content: center;
+  color: white;
+
+  --mask: radial-gradient(
+        107.33px at 50% calc(100% - 144px),
+        #000 99%,
+        #0000 101%
+      )
+      calc(50% - 96px) 0/192px 100%,
+    radial-gradient(107.33px at 50% calc(100% + 96px), #0000 99%, #000 101%) 50%
+      calc(100% - 48px) / 192px 100% repeat-x;
+  -webkit-mask: var(--mask);
+  mask: var(--mask);
+
+  h1 {
+    font-size: 50px;
+  }
+}

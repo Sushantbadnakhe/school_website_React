@@ -1,0 +1,21 @@
+.AboutSection {
+  margin-top: 5rem;
+  text-justify: auto;
+}
+
+.heading {
+  font-weight: 700;
+  color: orange;
+}
+
+.para {
+  font-weight: 400;
+}
+
+.aboutPara {
+  text-align: justify;
+}
+
+.section {
+  align-content: center;
+}
