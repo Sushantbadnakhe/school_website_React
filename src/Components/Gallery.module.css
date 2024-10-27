@@ -28,23 +28,3 @@
   padding: 1rem;
   margin-top: 100px;
 }
-
-.img_container {
-  padding: 5px;
-  width: fit-content;
-  position: relative;
-}
-
-.caption {
-  position: absolute;
-  top: 5px;
-  left: 5px;
-  p {
-    color: white;
-    font-weight: 600;
-  }
-}
-
-.img_container:hover {
-  background-color: rgba(0, 0, 0, 0.114);
-}

@@ -1,7 +1,11 @@
+import { useContext } from "react";
 import styles from "./Navbar.module.css";
 import { Link } from "react-router-dom";
+import { CdcontainerContext } from "../Store/Provider";
 
 export function Navbar() {
+  const { Links } = useContext(CdcontainerContext);
+
   return (
     <div className={styles.Navbar}>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -42,64 +46,39 @@ export function Navbar() {
             id="navbarSupportedContent"
           >
             <ul className="navbar-nav col-lg-12 justify-content-lg-center">
-              <li className="nav-item">
-                <Link className="nav-link active" aria-current="page" to="/">
-                  Home
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link to="/about-us" className="nav-link" href="#">
-                  About Us
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link to="/facilities" className="nav-link">
-                  Facilities
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link to="/admission" className="nav-link">
-                  Admission
-                </Link>
-              </li>
-              <li className="nav-item dropdown">
-                <a
-                  className="nav-link dropdown-toggle"
-                  href="#"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="true"
-                >
-                  Acadmic
-                </a>
-                <ul className="dropdown-menu">
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      Courses
-                    </a>
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      Exam Schedule
-                    </a>
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      Syllabus
-                    </a>
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      Rules and Regulation
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <li className="nav-item">
-                <Link to="/gallery" className="nav-link" aria-disabled="true">
-                  Gallery
-                </Link>
-              </li>
+              {Links.map((link) => (
+                <li className="nav-item">
+                  {link.sub !== false ? (
+                    <li className="nav-item dropdown" key={link.Name}>
+                      <a
+                        className="nav-link dropdown-toggle "
+                        href="#"
+                        role="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="true"
+                      >
+                        {link.Name}
+                      </a>
+                      <ul className="dropdown-menu">
+                        {link.sub.map((sublink) => (
+                          <li key={sublink.Name}>
+                            <Link
+                              className="dropdown-item"
+                              to={`${link.link} ${sublink.sublink}`}
+                            >
+                              {sublink.subname}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </li>
+                  ) : (
+                    <Link to={link.link} className="nav-link" href="#">
+                      {link.Name}
+                    </Link>
+                  )}
+                </li>
+              ))}
             </ul>
           </div>
           <div className="d-lg-flex col-lg-3 justify-content-lg-end">

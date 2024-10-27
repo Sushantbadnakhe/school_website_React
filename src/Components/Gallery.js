@@ -1,30 +1,22 @@
-import React from "react";
 import styles from "./Gallery.module.css";
+import React, { useContext } from "react";
 import { Head } from "./Head";
+import { GC } from "./GC";
+import { CdcontainerContext } from "../Store/Provider";
 export const Gallery = () => {
+  const { Ga } = useContext(CdcontainerContext);
+
   return (
-    <div className="gallery">
-      <Head Gallery="Gallery" />
-      <div className={`${styles.container} container`}>
-        <div className={`${styles.img_container} img-thumbnail`}>
-          <svg
-            width="100"
-            height="100"
-            viewBox="0 0 100 100"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle
-              cx="50"
-              cy="50"
-              r="42.5"
-              stroke="#F8B81F"
-              strokeWidth="15"
-            />
-          </svg>
-          <div className={styles.caption}>
-            <p>Activities</p>
-          </div>
+    <div>
+      <div className="gallery">
+        <Head Gallery="Gallery" />
+
+        <div
+          className={`${styles.container} container row row-cols-md-4 mx-auto`}
+        >
+          {Ga.map((g) => (
+            <GC key={g.id} g={g} />
+          ))}
         </div>
       </div>
     </div>

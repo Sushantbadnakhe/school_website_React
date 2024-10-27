@@ -132,11 +132,13 @@ export const Contact = () => {
                   <label htmlFor="address" className="form-label">
                     Massage
                   </label>
-                  <input
+                  <textarea
                     type="text"
+                    rows="5"
                     className="form-control"
                     id="address"
                     placeholder=""
+                    style={{ resize: "none" }}
                     required
                   />
                 </div>

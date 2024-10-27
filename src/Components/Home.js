@@ -13,8 +13,8 @@ export const Home = () => {
       <MarqueeSection />
       <Carousel />
       <AboutSection />
-      <VissionCarousel />
       <Curriculum />
+      <VissionCarousel />
       <AchivCards />
       <Album />
     </>

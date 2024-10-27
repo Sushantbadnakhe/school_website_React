@@ -1,6 +1,7 @@
 .AboutSection {
   margin-top: 5rem;
   text-justify: auto;
+  padding-bottom: 100px;
 }
 
 .heading {
@@ -18,4 +19,14 @@
 
 .section {
   align-content: center;
+}
+
+.background {
+  background-image: url(/src/assets/hero-bg.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #4461e414;
+  padding: 0;
+  margin: 0;
 }

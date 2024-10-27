@@ -3,7 +3,7 @@ import styles from "./AboutSection.module.css";
 
 export const AboutSection = () => {
   return (
-    <div className="p-5 text-center bg-body-tertiary rounded-3 ">
+    <div className={`${styles.background} text-center  rounded-3 `}>
       <div className={`${styles.section} container marketing`}>
         <svg
           className="bi mt-4 mb-3"
@@ -44,8 +44,8 @@ export const AboutSection = () => {
                 </text>
               </svg>
             </div>
-            <div className={`${styles.section} py-5 col-md-7 order-md-2`}>
-              <h2 className="text-start featurette-heading fw-normal lh-1">
+            <div className={`${styles.section} col-md-7 order-md-2`}>
+              <h2 className=" featurette-heading fw-normal lh-1">
                 About Our
                 <span className="text-body-secondary"> School</span>
               </h2>

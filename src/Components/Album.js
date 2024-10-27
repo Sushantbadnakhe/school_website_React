@@ -34,17 +34,17 @@ export const Album = () => {
             </div>
           </div>
         </div>
-      </div>
-      <div className="d-flex justify-content-end">
-        <Link to="/Gallery">
-          <button className="btn btn-primary me-3 p-2">
-            View More
-            <span>
-              {" "}
-              <MdKeyboardDoubleArrowRight />
-            </span>
-          </button>
-        </Link>
+        <div className="d-flex justify-content-end">
+          <Link to="/Gallery">
+            <button className="btn btn-primary me-3 p-2">
+              View More
+              <span>
+                {" "}
+                <MdKeyboardDoubleArrowRight />
+              </span>
+            </button>
+          </Link>
+        </div>
       </div>
     </main>
   );

@@ -4,7 +4,6 @@ import styles from "./VissionCarousel.module.css";
 export function VissionCarousel() {
   return (
     <div className="container marketing">
-      <hr className="featurette-divider" />
       <div className="row featurette">
         <div className={`${styles.Section} col-md-7`}>
           <h2 className="featurette-heading fw-normal lh-1">
@@ -40,7 +39,7 @@ export function VissionCarousel() {
         </div>
       </div>
 
-      <hr className="featurette-divider" />
+      <hr className="featurette-divider my-5" />
 
       <div className="row featurette">
         <div className="col-md-5">
@@ -78,8 +77,6 @@ export function VissionCarousel() {
           </p>
         </div>
       </div>
-
-      <hr className="featurette-divider" />
     </div>
   );
 }

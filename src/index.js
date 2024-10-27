@@ -10,6 +10,11 @@ import { AboutSection } from "./Components/AboutSection";
 import { Contact } from "./Components/Contact";
 import { Facilities } from "./Components/Facilities";
 import { Admission } from "./Components/Admission";
+import { Imgs } from "./Components/Imgs";
+import { Admin } from "./Components/admin";
+
+
+
 
 const router = createBrowserRouter([
   {
@@ -22,6 +27,9 @@ const router = createBrowserRouter([
       { path: "/contact-Us", element: <Contact /> },
       { path: "/facilities", element: <Facilities /> },
       { path: "/admission", element: <Admission /> },
+      { path: "/gallery/subgallery", element: <Imgs /> },
+      { path: "/admin", element: <Admin /> },
+      // { path: `/gallery/${GalleryTab}`, element: <subGallery /> },
     ],
   },
 ]);

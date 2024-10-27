@@ -4,8 +4,13 @@ import { GrPhone } from "react-icons/gr";
 import { CiMail } from "react-icons/ci";
 import { SlLocationPin } from "react-icons/sl";
 import { PiYoutubeLogoFill } from "react-icons/pi";
+import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { CdcontainerContext } from "../Store/Provider";
 
 export const Footer = () => {
+  const { Links } = useContext(CdcontainerContext);
+
   return (
     <div className={`${styles.container} container`} data-bs-theme="dark">
       <footer className="py-5">
@@ -13,36 +18,46 @@ export const Footer = () => {
           <div className="col-6 col-md-5 mb-3">
             <h5>Links</h5>
             <ul className="nav flex-column">
-              <li className="nav-item mb-2">
-                <a href="#" className="nav-link p-0 text-body-secondary">
-                  Home
-                </a>
-              </li>
-              <li className="nav-item mb-2">
-                <a href="#" className="nav-link p-0 text-body-secondary">
-                  About Us
-                </a>
-              </li>
-              <li className="nav-item mb-2">
-                <a href="#" className="nav-link p-0 text-body-secondary">
-                  Facilities
-                </a>
-              </li>
-              <li className="nav-item mb-2">
-                <a href="#" className="nav-link p-0 text-body-secondary">
-                  Admission
-                </a>
-              </li>
-              <li className="nav-item mb-2">
-                <a href="#" className="nav-link p-0 text-body-secondary">
-                  Acadmic
-                </a>
-              </li>
-              <li className="nav-item mb-2">
-                <a href="#" className="nav-link p-0 text-body-secondary">
-                  Gallery
-                </a>
-              </li>
+              {Links.map((link) => (
+                <li key={link.Name} className="nav-item">
+                  {link.sub !== false ? (
+                    <li className="nav-item dropdown ">
+                      <a
+                        className="nav-link dropdown-toggle p-0 text-body-secondary"
+                        href="#"
+                        role="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="true"
+                      >
+                        {link.Name}
+                      </a>
+                      <ul className="dropdown-menu">
+                        {link.sub.map((sublink) => (
+                          <li>
+                            key={sublink.sublink}
+                            <Link
+                              className="dropdown-item "
+                              to={`${link.link} ${sublink.sublink}`}
+                            >
+                              {sublink.subname}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </li>
+                  ) : (
+                    <li className="nav-item mb-2">
+                      <Link
+                        to={link.link}
+                        className="nav-link p-0 text-body-secondary"
+                        href="#"
+                      >
+                        {link.Name}
+                      </Link>
+                    </li>
+                  )}
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -89,23 +104,23 @@ export const Footer = () => {
             <p>© 2024 Company, Inc. All rights reserved.</p>
             <ul className="list-unstyled d-flex">
               <li className="ms-3">
-                <a className="link-body-emphasis" href="#">
+                <Link className="link-body-emphasis" to="#">
                   <PiYoutubeLogoFill />
-                </a>
+                </Link>
               </li>
               <li className="ms-3">
-                <a className="link-body-emphasis" href="#">
+                <Link className="link-body-emphasis" to="#">
                   <svg className="bi" width="24" height="24">
-                    <use xlinkHref="#instagram"></use>
+                    <use xlinkto="#instagram"></use>
                   </svg>
-                </a>
+                </Link>
               </li>
               <li className="ms-3">
-                <a className="link-body-emphasis" href="#">
+                <Link className="link-body-emphasis" to="#">
                   <svg className="bi" width="24" height="24">
-                    <use xlinkHref="#facebook"></use>
+                    <use xlinkto="#facebook"></use>
                   </svg>
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
