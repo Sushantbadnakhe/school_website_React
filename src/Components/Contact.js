@@ -8,8 +8,8 @@ export const Contact = () => {
   return (
     <div>
       <Head />;
-      <div className="container mt-5">
-        <div className="row g-5">
+      <div className="container mb-5 pb-5 mt-5">
+        <div className="row g-5 justify-content-center">
           <div className="col-md-6 col-lg-4 order-md-last pt-3 rounded border border-1">
             <h4 className="d-flex justify-content-between align-items-center mb-3">
               <span className="text-primary">Get In Touch With Us</span>

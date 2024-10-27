@@ -9,7 +9,8 @@ import { MdOutlineDeleteOutline } from "react-icons/md";
 export const Addcrd = () => {
   const [select, setselect] = useState("A");
 
-  const { Cdcontainer, deleteCard } = useContext(CdcontainerContext);
+  const { Cdcontainer, deleteCard, AcContainer } =
+    useContext(CdcontainerContext);
 
   const handleselect = (b) => {
     setselect(b);
@@ -18,11 +19,14 @@ export const Addcrd = () => {
   return (
     <div className="container my-5">
       <form className="row g-3">
-        <div className="col-md-6">
-          <label for="inputEmail4" className="form-label">
-            Select Image
-          </label>
-          <input type="file" className="form-control" id="inputEmail4" />
+        <div className="col-md-6 justify-content-center w-100">
+          <label for="inputfile" className="form-label"></label>
+
+          <input
+            type="file"
+            className={`${styles.fileInput} form-control`}
+            id="inputfile"
+          />
         </div>
 
         <div className="col-12">
@@ -84,24 +88,30 @@ export const Addcrd = () => {
           <div className="collapse  navbar-collapse" id="navbarsExample02">
             <ul className="navbar-nav me-auto">
               <li
-                className={`${
-                  select === "C" ? styles.active : ""
-                } nav-item mx-3`}
+                className={`nav-item mx-3 ${styles.box}`}
                 onClick={() => {
-                  handleselect("C");
+                  handleselect("Cdcontainer");
                 }}
               >
                 <h5>Curriculum</h5>
+                <div
+                  className={`${
+                    select === "Cdcontainer" ? styles.active : ""
+                  } ${styles.tag}`}
+                ></div>
               </li>
               <li
-                className={`${
-                  select === "A" ? styles.active : ""
-                } nav-item mx-3`}
+                className={`nav-item mx-3 ${styles.box}`}
                 onClick={() => {
-                  handleselect("A");
+                  handleselect("AcContainer");
                 }}
               >
                 <h5>Achivement</h5>
+                <div
+                  className={`${
+                    select === "AcContainer" ? styles.active : ""
+                  } ${styles.tag}`}
+                ></div>
               </li>
             </ul>
           </div>
@@ -109,17 +119,17 @@ export const Addcrd = () => {
       </nav>
       <hr />
 
-      {select === "A" ? (
+      {select === "AcContainer" ? (
         <div className="row row-cols-1 row-cols-md-4 g-4 m-3 container mx-auto text-start">
-          {Cdcontainer.map((Ac) => (
+          {AcContainer.map((Ac) => (
             <div key={Ac.id}>
               <button
-                className="btn btn-primary"
+                className="btn mb-1 btn-outline-primary rounded-circle"
                 onClick={() => {
                   deleteCard(Ac.id);
                 }}
               >
-                delete
+                <MdOutlineDeleteOutline />
               </button>
               <AcCard key={Ac.id} Ac={Ac} />
             </div>
@@ -130,7 +140,7 @@ export const Addcrd = () => {
           {Cdcontainer.map((Cd) => (
             <div key={Cd.id}>
               <button
-                className="btn btn-outline-primary rounded-circle p-2"
+                className="btn mb-1 btn-outline-primary rounded-circle"
                 onClick={() => {
                   deleteCard(Cd.id);
                 }}

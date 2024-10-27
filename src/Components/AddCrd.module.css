@@ -1,4 +1,40 @@
-.active {
-  border-bottom: 3px solid blue;
+.active.tag {
+  width: 100%;
+}
+
+.tag {
+  width: 0;
+  height: 3px;
+  background-color: blue;
   transition: 200ms ease-in-out;
+}
+
+.box:hover .tag {
+  width: 100%;
+}
+
+.box {
+  cursor: pointer;
+}
+
+.fileInput {
+  width: 15rem;
+  height: 15rem;
+  margin: auto;
+  border-radius: 50%;
+  position: relative;
+}
+
+.fileInput::before {
+  height: 15rem;
+  width: 15rem;
+  background-image: url(../assets/upload-add-picture-jpg-file-600nw-1975494812.jpg);
+  background-size: contain;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: " ";
+  opacity: 1;
+  margin: 0;
 }

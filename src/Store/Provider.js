@@ -2,6 +2,7 @@ import { createContext } from "react";
 
 export const CdcontainerContext = createContext({
   Cdcontainer: [],
+  AcContainer: [],
   Ga: [],
   showGallery: () => {},
   Links: [],
@@ -51,25 +52,52 @@ export const CdcontainerProvider = ({ children }) => {
   const Cdcontainer = [
     {
       id: "1",
-      title: "title1",
+      title: "title1 cur",
       body: "This is body of card having title title",
       date: "05/12/2024",
     },
     {
       id: "2",
-      title: "title2",
+      title: "title2 cur",
       body: "This is body of card having title title for seconf curriculum.........",
       date: "05/03/2023",
     },
     {
       id: "3",
-      title: "title3",
+      title: "title3cr",
       body: "This is body of card having title title for third curriculum",
       date: "05/04/2023",
     },
     {
       id: "4",
       title: "title4",
+      body: "This is body of card having title title for third curriculum",
+      date: "05/04/2023",
+    },
+  ];
+
+  const AcContainer = [
+    {
+      id: "1",
+      title: "title1 ac",
+      body: "This is body of card having title title",
+      date: "05/12/2024",
+    },
+    {
+      id: "2",
+      title: "title2 ac",
+      body: "This is body of card having title title for seconf curriculum.........",
+      date: "05/03/2023",
+    },
+    {
+      id: "3",
+      title: "title3 ac",
+      body: "This is body of card having title title for third curriculum",
+      date: "05/04/2023",
+    },
+    {
+      id: "4",
+      title: "title4 ac",
       body: "This is body of card having title title for third curriculum",
       date: "05/04/2023",
     },
@@ -121,6 +149,7 @@ export const CdcontainerProvider = ({ children }) => {
     <CdcontainerContext.Provider
       value={{
         Cdcontainer,
+        AcContainer,
         Ga,
         showGallery,
         Links,
